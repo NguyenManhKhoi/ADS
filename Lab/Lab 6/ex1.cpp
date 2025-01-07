@@ -43,7 +43,7 @@ TreeNode* buildBinaryTree(const std::vector<int>& arr, int start, int end, int E
 
 // Function to display tree information (in-order traversal)
 void displayTree(TreeNode* root) {
-/*dE 2: ok ok*/
+/*dE 2: ok ok ko ok */
         displayTree(root->left);
         std::cout << root->value << " ";
         displayTree(root->right);
