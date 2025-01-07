@@ -47,7 +47,7 @@ void displayTree(TreeNode* root) {
         std::cout << root->value << " ";
         displayTree(root->right);
     }
-}
+
 
 // Function to search for a value in the tree using recursion
 TreeNode* searchValue(TreeNode* root, int target) {
