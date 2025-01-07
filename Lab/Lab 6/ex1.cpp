@@ -3,7 +3,9 @@
 #include <climits>
 #include <cstdlib>
 
-// Define a structure for a tree node
+/*De 1:
+ok ok
+*/
 struct TreeNode {
     int value;
     TreeNode* left;
@@ -41,7 +43,7 @@ TreeNode* buildBinaryTree(const std::vector<int>& arr, int start, int end, int E
 
 // Function to display tree information (in-order traversal)
 void displayTree(TreeNode* root) {
-    if (root) {
+/*dE 2: ok ok*/
         displayTree(root->left);
         std::cout << root->value << " ";
         displayTree(root->right);
@@ -81,7 +83,7 @@ TreeNode* removeNode(TreeNode* root, int value, int E) {
     if (!root) {
         return nullptr;
     }
-
+/*De 3: check check*/
     if (value < root->value) {
         root->left = removeNode(root->left, value, E);
     } else if (value > root->value) {
