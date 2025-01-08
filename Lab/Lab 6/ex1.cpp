@@ -81,11 +81,11 @@ TreeNode* insertNode(TreeNode* root, int value, int E) {
 TreeNode* removeNode(TreeNode* root, int value, int E) {
     if (!root) {
         return nullptr;
-    }
+    }}
 
   /*de 3 ok:*/
         root->left = removeNode(root->left, value, E);
-    } else if (value > root->value) {
+     else if (value > root->value) {
         root->right = removeNode(root->right, value, E);
     } else {
         // Node with only one child or no child
@@ -113,7 +113,7 @@ TreeNode* removeNode(TreeNode* root, int value, int E) {
     }
 
     return root;
-}
+
 
 int main() {
     int n = 6; // Number of elements in the array
