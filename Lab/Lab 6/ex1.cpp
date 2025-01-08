@@ -2,8 +2,146 @@
 #include <vector>
 #include <climits>
 #include <cstdlib>
+/*Loi giai bai 1: 
+PSEUDO CODE:
+FUNCTION isOctahedral(x):
+    n = 1
+    WHILE True:
+        octahedral = (2 * n^2 + n) / 3
+        IF octahedral == x:
+            RETURN True
+        ELSE IF octahedral > x:
+            RETURN False
+        n = n + 1
 
-/*De 1:
+FUNCTION verifyArray(arr):
+    FOR each number in arr:
+        IF isOctahedral(number) == False:
+            PRINT "Not Octahedral:", number
+        ELSE:
+            PRINT "Octahedral:", number
+
+Example Implementation (python):
+def is_octahedral(x):
+    n = 1
+    while True:
+        octahedral = (2 * n**2 + n) // 3
+        if octahedral == x:
+            return True
+        elif octahedral > x:
+            return False
+        n += 1
+
+def verify_array(arr):
+    for number in arr:
+        if is_octahedral(number):
+            print(f"Octahedral: {number}")
+        else:
+            print(f"Not Octahedral: {number}")
+
+# Example usage:
+arr = [1, 2, 19, 35, 92]
+verify_array(arr)
+*/
+
+/* Loi giai bai 2:
+PSEUDO CODE:
+FUNCTION bfsTraversal(root):
+    INIT queue
+    ADD root to queue
+    WHILE queue is not empty:
+        current = POP from queue
+        PRINT current.value
+        FOR each child of current:
+            ADD child to queue
+
+Example in python :
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.children = []
+
+def bfs_traversal(root):
+    if not root:
+        return
+
+    queue = [root]
+    while queue:
+        current = queue.pop(0)
+        print(current.value, end=" ")
+        for child in current.children:
+            queue.append(child)
+
+# Example tree
+root = TreeNode(10)
+child1 = TreeNode(4)
+child2 = TreeNode(8)
+child3 = TreeNode(13)
+child4 = TreeNode(20)
+child5 = TreeNode(90)
+child6 = TreeNode(7)
+
+root.children = [child1, child2]
+child1.children = [child3, child4]
+child2.children = [child5]
+child5.children = [child6]
+
+bfs_traversal(root)  # Output: 10 4 8 13 20 90 7
+
+*/
+
+
+/* Loi giai bai 3:
+PSEUDO CODE:
+FUNCTION enhancedSelectionSort(arr):
+    left = 0
+    right = n - 1
+    WHILE left < right:
+        minIndex = left
+        maxIndex = left
+        FOR i = left TO right:
+            IF arr[i] < arr[minIndex]:
+                minIndex = i
+            IF arr[i] > arr[maxIndex]:
+                maxIndex = i
+        SWAP(arr[minIndex], arr[left])
+        IF maxIndex == left:
+            maxIndex = minIndex
+        SWAP(arr[maxIndex], arr[right])
+        left = left + 1
+        right = right - 1
+
+Implemen example in python : 
+def enhanced_selection_sort(arr):
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+        min_index = left
+        max_index = left
+
+        for i in range(left, right + 1):
+            if arr[i] < arr[min_index]:
+                min_index = i
+            if arr[i] > arr[max_index]:
+                max_index = i
+
+        arr[left], arr[min_index] = arr[min_index], arr[left]
+
+        if max_index == left:
+            max_index = min_index
+
+        arr[right], arr[max_index] = arr[max_index], arr[right]
+
+        left += 1
+        right -= 1
+
+# Example usage
+arr = [10, 4, 8, 13, 20, 7, 90]
+print("Original Array:", arr)
+enhanced_selection_sort(arr)
+print("Sorted Array:", arr)
+
 */
 struct TreeNode {
     int value;
