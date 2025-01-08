@@ -1,0 +1,334 @@
+Problem 1: Verify if numbers in an array are octahedral
+Solution Steps:
+Understand the formula:
+
+The octahedral number formula is:
+𝑓
+(
+𝑛
+)
+=
+(
+2
+𝑛
+2
++
+𝑛
+)
+3
+f(n)= 
+3
+(2n 
+2
+ +n)
+​
+ 
+Algorithm/Pseudo-Code:
+
+Use recursion or iteration to compute octahedral numbers.
+Check if each number in the array matches any computed octahedral number.
+Pseudo-Code:
+FUNCTION isOctahedral(x):
+    n = 1
+    WHILE True:
+        octahedral = (2 * n^2 + n) / 3
+        IF octahedral == x:
+            RETURN True
+        ELSE IF octahedral > x:
+            RETURN False
+        n = n + 1
+
+FUNCTION verifyArray(arr):
+    FOR each number in arr:
+        IF isOctahedral(number) == False:
+            PRINT "Not Octahedral:", number
+        ELSE:
+            PRINT "Octahedral:", number
+Implementation in C++: Would you like me to write a full implementation?
+
+Complexity:
+
+Time Complexity: 
+𝑂
+(
+𝑛
+×
+𝑚
+)
+O(n× 
+m
+​
+ ), where 
+𝑛
+n is the size of the array, and 
+𝑚
+m is the maximum value.
+Space Complexity: 
+𝑂
+(
+1
+)
+O(1).
+
+
+
+
+
+
+
+Problem 2: Tree Traversal
+Solution Steps:
+Traverse the tree using BFS (Breadth-First Search):
+
+Use a queue to visit nodes level by level.
+Add child nodes to the queue after visiting the parent.
+Pseudo-Code:
+FUNCTION bfsTraversal(root):
+    INIT queue
+    ADD root to queue
+    WHILE queue is not empty:
+        current = POP from queue
+        PRINT current.value
+        FOR each child of current:
+            ADD child to queue
+
+Implementation in C++: Would you like me to write this for you?
+
+Output:
+
+For the provided tree:
+10
+4 8
+13 20 90
+7
+
+BFS Output: 10 4 8 13 20 90 7.
+
+
+
+
+Problem 3: Enhanced Selection Sort
+Solution Steps:
+Algorithm:
+
+Find the minimum and place it at the beginning.
+Find the maximum and place it at the end.
+Reduce the range and repeat until sorted.
+Pseudo-Code:
+
+FUNCTION enhancedSelectionSort(arr):
+    left = 0
+    right = n - 1
+    WHILE left < right:
+        minIndex = left
+        maxIndex = left
+        FOR i = left TO right:
+            IF arr[i] < arr[minIndex]:
+                minIndex = i
+            IF arr[i] > arr[maxIndex]:
+                maxIndex = i
+        SWAP(arr[minIndex], arr[left])
+        IF maxIndex == left:
+            maxIndex = minIndex
+        SWAP(arr[maxIndex], arr[right])
+        left = left + 1
+        right = right - 1
+
+C++ Implementation:
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void enhancedSelectionSort(vector<int>& arr) {
+    int left = 0, right = arr.size() - 1;
+
+    while (left < right) {
+        int minIndex = left, maxIndex = left;
+
+        for (int i = left; i <= right; i++) {
+            if (arr[i] < arr[minIndex])
+                minIndex = i;
+            if (arr[i] > arr[maxIndex])
+                maxIndex = i;
+        }
+
+        swap(arr[minIndex], arr[left]);
+
+        if (maxIndex == left)
+            maxIndex = minIndex;
+
+        swap(arr[maxIndex], arr[right]);
+
+        left++;
+        right--;
+    }
+}
+
+void printArray(const vector<int>& arr) {
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    vector<int> arr = {10, 4, 8, 13, 20, 7, 90};
+    cout << "Original Array: ";
+    printArray(arr);
+
+    enhancedSelectionSort(arr);
+
+    cout << "Sorted Array: ";
+    printArray(arr);
+
+    return 0;
+}
+
+Time Complexity: O(n^2)
+Space Complexity: O(1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+)
